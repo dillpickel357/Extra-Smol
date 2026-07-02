@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://du8i54md1xk62"]
+
+[ext_resource type="PackedScene" uid="uid://dgc6ox8xwtnlo" path="res://player_controller.tscn" id="1_ig7tw"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_6sj1v"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_6sj1v"]
+
+[node name="main" type="Node2D" unique_id=1058022180]
+
+[node name="assets" type="Node2D" parent="." unique_id=134250502]
+position = Vector2(707, 249)
+scale = Vector2(0.6961643, 0.6961643)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="assets" unique_id=399608464]
+position = Vector2(-715.3484, 846.0646)
+scale = Vector2(14053.665, -1035.0765)
+mesh = SubResource("QuadMesh_6sj1v")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="assets" unique_id=765190507]
+position = Vector2(0, -5.7457714)
+scale = Vector2(991.1693, 982.817)
+mesh = SubResource("SphereMesh_6sj1v")
+
+[node name="player controller" parent="." unique_id=402805899 instance=ExtResource("1_ig7tw")]
+position = Vector2(1086, 229.00002)
+scale = Vector2(0.6961643, 0.6961643)
+
+[node name="Camera2D" type="Camera2D" parent="player controller" unique_id=413408612]
+position = Vector2(2.872885, -2.1918373e-05)
