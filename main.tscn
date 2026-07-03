@@ -25,18 +25,18 @@ size = Vector2(451.1627, 334.88367)
 
 [sub_resource type="QuadMesh" id="QuadMesh_6sj1v"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6sj1v"]
-radius = 144.78903
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_8tn5n"]
 radius = 114.18854
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sj1v"]
+size = Vector2(91.61665, 314.04688)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6sj1v"]
 radius = 37.480858
 height = 83.828125
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sj1v"]
-size = Vector2(85.592026, 314.04688)
+[sub_resource type="CircleShape2D" id="CircleShape2D_6sj1v"]
+radius = 144.78903
 
 [node name="main" type="Node2D" unique_id=1058022180]
 
@@ -248,7 +248,7 @@ mesh = SubResource("QuadMesh_6sj1v")
 texture = ExtResource("1_h2yge")
 
 [node name="tray" type="Sprite2D" parent="assets" unique_id=638552460]
-position = Vector2(-1017.0013, 847.5011)
+position = Vector2(-1615.9978, 1732.3496)
 scale = Vector2(1.6440684, 1.6440684)
 texture = ExtResource("2_1bvp3")
 
@@ -256,20 +256,6 @@ texture = ExtResource("2_1bvp3")
 position = Vector2(-4014.8567, -3759.17)
 scale = Vector2(1.0342422, 1.0342422)
 texture = ExtResource("5_yaehf")
-
-[node name="dough" type="RigidBody2D" parent="." unique_id=808717321]
-position = Vector2(2, 837.99994)
-scale = Vector2(0.98083395, 0.9845953)
-collision_layer = 4
-mass = 3.0
-gravity_scale = 0.0
-linear_damp = 2.0
-
-[node name="PngtreeRawPizzaDoughRoundCircleTopViewPngImage16531787" type="Sprite2D" parent="dough" unique_id=2037625340]
-texture = ExtResource("4_7mycd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dough" unique_id=289550893]
-shape = SubResource("CircleShape2D_6sj1v")
 
 [node name="jar" type="RigidBody2D" parent="." unique_id=1375944956]
 position = Vector2(632.00006, -280)
@@ -293,22 +279,8 @@ texture = ExtResource("14_vivmo")
 position = Vector2(-6.2227824e-05, -8.125166)
 shape = SubResource("CircleShape2D_8tn5n")
 
-[node name="pizza spawner" type="Node2D" parent="." unique_id=2114658810 node_paths=PackedStringArray("tray", "dough", "spawn_point", "stop_point")]
-script = ExtResource("3_1bvp3")
-tray = NodePath("../assets/tray")
-dough = NodePath("../dough")
-spawn_point = NodePath("spawn")
-stop_point = NodePath("stop")
-speed = 900
-release_delay = 0.1
-
-[node name="spawn" type="Marker2D" parent="pizza spawner" unique_id=251018792]
-position = Vector2(4721, 838)
-
-[node name="stop" type="Marker2D" parent="pizza spawner" unique_id=1863419618]
-position = Vector2(0, 838)
-
 [node name="player controller" parent="." unique_id=402805899 instance=ExtResource("1_ig7tw")]
+top_level = true
 position = Vector2(0, 229)
 scale = Vector2(0.6961643, 0.6961643)
 collision_layer = 7
@@ -318,6 +290,15 @@ collision_mask = 14
 position = Vector2(2.872885, -2.1918373e-05)
 zoom = Vector2(0.275, 0.275)
 position_smoothing_enabled = true
+
+[node name="pizza spawner" type="Node2D" parent="." unique_id=2114658810]
+script = ExtResource("3_1bvp3")
+
+[node name="spawn" type="Marker2D" parent="pizza spawner" unique_id=251018792]
+position = Vector2(4721, 838)
+
+[node name="stop" type="Marker2D" parent="pizza spawner" unique_id=1863419618]
+position = Vector2(0, 838)
 
 [node name="roller" type="RigidBody2D" parent="." unique_id=1288896649]
 position = Vector2(-9.536743e-07, -16.000015)
@@ -333,6 +314,12 @@ position = Vector2(-2.861023e-06, 2.861023e-06)
 scale = Vector2(1.0000001, 1.0000001)
 texture = ExtResource("10_4c57u")
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="roller" unique_id=637037390]
+position = Vector2(-0.8101125, 0.86568546)
+rotation = -0.7853982
+scale = Vector2(0.7893371, 0.955)
+shape = SubResource("RectangleShape2D_6sj1v")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="roller" unique_id=722301905]
 position = Vector2(-133.87769, -135.35896)
 rotation = -0.78539807
@@ -345,19 +332,31 @@ rotation = -0.78539807
 scale = Vector2(1.1428577, 1.4761919)
 shape = SubResource("CapsuleShape2D_6sj1v")
 
-[node name="roller zone" type="Area2D" parent="roller" unique_id=1747976550 node_paths=PackedStringArray("target", "sprite_to_change")]
+[node name="roller zone" type="Area2D" parent="roller" unique_id=1747976550]
 position = Vector2(4.7683716e-07, 4.7683716e-07)
 collision_mask = 4
 script = ExtResource("11_dg77c")
-target = NodePath("../../dough")
-sprite_to_change = NodePath("../../dough/PngtreeRawPizzaDoughRoundCircleTopViewPngImage16531787")
 new_texture = ExtResource("12_ycdy4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="roller/roller zone" unique_id=19137568]
-position = Vector2(0.03703642, 0.018531322)
+position = Vector2(-0.8101144, 0.86568356)
 rotation = -0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_6sj1v")
+
+[node name="dough2" type="RigidBody2D" parent="." unique_id=1219943832]
+position = Vector2(2, 1409)
+scale = Vector2(0.98083395, 0.9845953)
+collision_layer = 4
+mass = 3.0
+gravity_scale = 0.0
+linear_damp = 2.0
+
+[node name="PngtreeRawPizzaDoughRoundCircleTopViewPngImage16531787" type="Sprite2D" parent="dough2" unique_id=248532627]
+texture = ExtResource("4_7mycd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dough2" unique_id=356192211]
+shape = SubResource("CircleShape2D_6sj1v")
 
 [connection signal="body_entered" from="button" to="button" method="_on_body_entered"]
 [connection signal="body_entered" from="cutting board" to="cutting board" method="_on_body_entered"]

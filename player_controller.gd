@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var push_force = 15   # how hard you shove things
 @onready var anim = $AnimatedSprite2D   # <- your AnimatedSprite2D node
 
+
 func get_input():
 	var input = Vector2()
 	if Input.is_action_pressed('right 1'):
