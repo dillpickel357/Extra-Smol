@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bvgqdoop6rarv" path="res://assets/pngtree-raw-pizza-dough-round-circle-top-view-png-image_16531787.png" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://ccy52x6y03mis" path="res://assets/2834137-removebg-preview.png" id="7_272bh"]
 [ext_resource type="Texture2D" uid="uid://cx3rwrwas8bb" path="res://assets/images-removebg-preview.png" id="10_4c57u"]
+[ext_resource type="Script" uid="uid://b16ui8gjhavyy" path="res://roller_zone.gd" id="11_dg77c"]
+[ext_resource type="Texture2D" uid="uid://dkvrhkebghkyh" path="res://assets/images-removebg-preview (1).png" id="12_ycdy4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ai6g8"]
 radius = 229.83008
@@ -22,6 +24,9 @@ radius = 151.60474
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6sj1v"]
 radius = 37.480858
 height = 83.828125
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sj1v"]
+size = Vector2(85.592026, 314.04688)
 
 [node name="main" type="Node2D" unique_id=1058022180]
 
@@ -289,5 +294,21 @@ rotation = -0.78539807
 scale = Vector2(1.1428577, 1.4761919)
 shape = SubResource("CapsuleShape2D_6sj1v")
 
+[node name="roller zone" type="Area2D" parent="roller" unique_id=1747976550 node_paths=PackedStringArray("target", "sprite_to_change")]
+position = Vector2(4.7683716e-07, 4.7683716e-07)
+collision_mask = 4
+script = ExtResource("11_dg77c")
+target = NodePath("../../assets/dough")
+sprite_to_change = NodePath("../../assets/dough/PngtreeRawPizzaDoughRoundCircleTopViewPngImage16531787")
+new_texture = ExtResource("12_ycdy4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="roller/roller zone" unique_id=19137568]
+position = Vector2(0.03703642, 0.018531322)
+rotation = -0.7853982
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_6sj1v")
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="roller" to="Area2D" method="_on_roller_body_entered"]
+[connection signal="body_entered" from="roller/roller zone" to="Area2D" method="_on_roller_zone_body_entered"]
+[connection signal="body_entered" from="roller/roller zone" to="roller/roller zone" method="_on_body_entered"]
