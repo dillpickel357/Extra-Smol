@@ -231,7 +231,7 @@ texture = ExtResource("7_272bh")
 position = Vector2(-1012.69196, 846.0646)
 scale = Vector2(1.4089116, 1.4143145)
 collision_layer = 4
-mass = 2.95
+mass = 3.0
 gravity_scale = 0.0
 linear_damp = 2.0
 
@@ -261,7 +261,6 @@ position = Vector2(0, 229)
 scale = Vector2(0.6961643, 0.6961643)
 collision_layer = 7
 collision_mask = 6
-push_force = 10
 
 [node name="Camera2D" type="Camera2D" parent="player controller" unique_id=413408612]
 position = Vector2(2.872885, -2.1918373e-05)
