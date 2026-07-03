@@ -4,13 +4,13 @@ extends CharacterBody2D
 
 func get_input():
 	var input = Vector2()
-	if Input.is_action_pressed('right'):
+	if Input.is_action_pressed('right 2'):
 		input.x += 1
-	if Input.is_action_pressed('left'):
+	if Input.is_action_pressed('left 2'):
 		input.x -= 1
-	if Input.is_action_pressed('down'):
+	if Input.is_action_pressed('down 2'):
 		input.y += 1
-	if Input.is_action_pressed('up'):
+	if Input.is_action_pressed('up 2'):
 		input.y -= 1
 	return input
 
