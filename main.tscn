@@ -6,20 +6,30 @@
 [ext_resource type="Texture2D" uid="uid://tvj6jinavcgm" path="res://assets/image-removebg-preview.png" id="2_1bvp3"]
 [ext_resource type="Script" uid="uid://cfhbf3cyb8g61" path="res://area_2d.gd" id="2_kek77"]
 [ext_resource type="Script" uid="uid://dgaos86h8dffx" path="res://pizza_spawner.gd" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://cj18r4tlm131i" path="res://cutting_board.gd" id="4_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://cg0ve34w17tgw" path="res://assets/red-button.svg.hi.png" id="4_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bvgqdoop6rarv" path="res://assets/pngtree-raw-pizza-dough-round-circle-top-view-png-image_16531787.png" id="4_7mycd"]
+[ext_resource type="Texture2D" uid="uid://h8silxg8cad" path="res://assets/image-removebg-preview (2).png" id="5_yaehf"]
 [ext_resource type="Texture2D" uid="uid://ccy52x6y03mis" path="res://assets/2834137-removebg-preview.png" id="7_272bh"]
 [ext_resource type="Texture2D" uid="uid://cx3rwrwas8bb" path="res://assets/images-removebg-preview.png" id="10_4c57u"]
 [ext_resource type="Script" uid="uid://b16ui8gjhavyy" path="res://roller_zone.gd" id="11_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dkvrhkebghkyh" path="res://assets/images-removebg-preview (1).png" id="12_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://b1kjupjh4qtwb" path="res://assets/empty-open-glass-jar-isolated-260nw-2215068087-removebg-preview.png" id="13_w48qg"]
+[ext_resource type="Texture2D" uid="uid://b34m6tnp5jive" path="res://assets/image-removebg-preview (1).png" id="14_vivmo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ai6g8"]
 radius = 229.83008
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tn5n"]
+size = Vector2(451.1627, 334.88367)
+
 [sub_resource type="QuadMesh" id="QuadMesh_6sj1v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6sj1v"]
-radius = 151.60474
+radius = 144.78903
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8tn5n"]
+radius = 114.18854
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6sj1v"]
 radius = 37.480858
@@ -193,19 +203,39 @@ position = Vector2(-3.5416298, -322.53043)
 scale = Vector2(1.0000001, 1.0000001)
 texture = ExtResource("1_lquwl")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=141482941 node_paths=PackedStringArray("conveyor")]
-position = Vector2(1000.0005, 248)
+[node name="button" type="Area2D" parent="." unique_id=141482941 node_paths=PackedStringArray("conveyor")]
+position = Vector2(1000, 248)
 scale = Vector2(0.6961644, 0.6961644)
 script = ExtResource("2_kek77")
 conveyor = NodePath("../pizza spawner")
 
-[node name="RedButton_svg_hi" type="Sprite2D" parent="Area2D" unique_id=2003530792]
+[node name="RedButton_svg_hi" type="Sprite2D" parent="button" unique_id=2003530792]
 position = Vector2(-0.0007324219, 0)
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("4_5vw27")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=168260247]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="button" unique_id=168260247]
 shape = SubResource("CircleShape2D_ai6g8")
+
+[node name="cutting board" type="Area2D" parent="." unique_id=438960369 node_paths=PackedStringArray("target", "node_to_delete", "sprite_to_change")]
+position = Vector2(-32, 287.99997)
+scale = Vector2(1.72, 1.72)
+collision_layer = 15
+collision_mask = 15
+script = ExtResource("4_2cqfq")
+target = NodePath("../jar")
+node_to_delete = NodePath("../jar/EmptyOpenGlassJarIsolated260Nw2215068087RemovebgPreview/ImageRemovebgPreview(1)")
+sprite_to_change = NodePath("../jar/EmptyOpenGlassJarIsolated260Nw2215068087RemovebgPreview")
+new_texture = ExtResource("5_yaehf")
+
+[node name="cutting board" type="Sprite2D" parent="cutting board" unique_id=906227228]
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("7_272bh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cutting board" unique_id=1862577915]
+position = Vector2(1.1630354, 0)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_8tn5n")
 
 [node name="assets" type="Node2D" parent="." unique_id=134250502]
 position = Vector2(707, 249)
@@ -222,29 +252,51 @@ position = Vector2(-1017.0013, 847.5011)
 scale = Vector2(1.6440684, 1.6440684)
 texture = ExtResource("2_1bvp3")
 
-[node name="2834137RemovebgPreview" type="Sprite2D" parent="assets" unique_id=906227228]
-position = Vector2(-1012.69183, -12.928009)
-scale = Vector2(2.47068, 2.47068)
-texture = ExtResource("7_272bh")
+[node name="ImageRemovebgPreview(2)" type="Sprite2D" parent="assets" unique_id=1940466693]
+position = Vector2(-4014.8567, -3759.17)
+scale = Vector2(1.0342422, 1.0342422)
+texture = ExtResource("5_yaehf")
 
-[node name="dough" type="RigidBody2D" parent="assets" unique_id=808717321]
-position = Vector2(-1012.69196, 846.0646)
-scale = Vector2(1.4089116, 1.4143145)
+[node name="dough" type="RigidBody2D" parent="." unique_id=808717321]
+position = Vector2(2, 837.99994)
+scale = Vector2(0.98083395, 0.9845953)
 collision_layer = 4
 mass = 3.0
 gravity_scale = 0.0
 linear_damp = 2.0
 
-[node name="PngtreeRawPizzaDoughRoundCircleTopViewPngImage16531787" type="Sprite2D" parent="assets/dough" unique_id=2037625340]
+[node name="PngtreeRawPizzaDoughRoundCircleTopViewPngImage16531787" type="Sprite2D" parent="dough" unique_id=2037625340]
 texture = ExtResource("4_7mycd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="assets/dough" unique_id=289550893]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dough" unique_id=289550893]
 shape = SubResource("CircleShape2D_6sj1v")
+
+[node name="jar" type="RigidBody2D" parent="." unique_id=1375944956]
+position = Vector2(632.00006, -280)
+scale = Vector2(0.98083395, 0.9845953)
+collision_layer = 8
+mass = 3.0
+gravity_scale = 0.0
+linear_damp = 2.0
+
+[node name="EmptyOpenGlassJarIsolated260Nw2215068087RemovebgPreview" type="Sprite2D" parent="jar" unique_id=1992982141]
+position = Vector2(2.8764648, 6.093872)
+scale = Vector2(1.2380135, 1.233284)
+texture = ExtResource("13_w48qg")
+
+[node name="ImageRemovebgPreview(1)" type="Sprite2D" parent="jar/EmptyOpenGlassJarIsolated260Nw2215068087RemovebgPreview" unique_id=548262211]
+position = Vector2(-2.3234863, -11.529388)
+scale = Vector2(0.45574874, 0.4557487)
+texture = ExtResource("14_vivmo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jar" unique_id=798372865]
+position = Vector2(-6.2227824e-05, -8.125166)
+shape = SubResource("CircleShape2D_8tn5n")
 
 [node name="pizza spawner" type="Node2D" parent="." unique_id=2114658810 node_paths=PackedStringArray("tray", "dough", "spawn_point", "stop_point")]
 script = ExtResource("3_1bvp3")
 tray = NodePath("../assets/tray")
-dough = NodePath("../assets/dough")
+dough = NodePath("../dough")
 spawn_point = NodePath("spawn")
 stop_point = NodePath("stop")
 speed = 900
@@ -260,7 +312,7 @@ position = Vector2(0, 838)
 position = Vector2(0, 229)
 scale = Vector2(0.6961643, 0.6961643)
 collision_layer = 7
-collision_mask = 6
+collision_mask = 14
 
 [node name="Camera2D" type="Camera2D" parent="player controller" unique_id=413408612]
 position = Vector2(2.872885, -2.1918373e-05)
@@ -272,7 +324,7 @@ position = Vector2(-9.536743e-07, -16.000015)
 rotation = -0.7853982
 scale = Vector2(1.6901562, 1.6716601)
 collision_layer = 2
-mass = 3.0
+mass = 2.5
 gravity_scale = 0.0
 linear_damp = 2.0
 
@@ -297,8 +349,8 @@ shape = SubResource("CapsuleShape2D_6sj1v")
 position = Vector2(4.7683716e-07, 4.7683716e-07)
 collision_mask = 4
 script = ExtResource("11_dg77c")
-target = NodePath("../../assets/dough")
-sprite_to_change = NodePath("../../assets/dough/PngtreeRawPizzaDoughRoundCircleTopViewPngImage16531787")
+target = NodePath("../../dough")
+sprite_to_change = NodePath("../../dough/PngtreeRawPizzaDoughRoundCircleTopViewPngImage16531787")
 new_texture = ExtResource("12_ycdy4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="roller/roller zone" unique_id=19137568]
@@ -307,7 +359,8 @@ rotation = -0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_6sj1v")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="roller" to="Area2D" method="_on_roller_body_entered"]
-[connection signal="body_entered" from="roller/roller zone" to="Area2D" method="_on_roller_zone_body_entered"]
+[connection signal="body_entered" from="button" to="button" method="_on_body_entered"]
+[connection signal="body_entered" from="cutting board" to="cutting board" method="_on_body_entered"]
+[connection signal="body_entered" from="roller" to="button" method="_on_roller_body_entered"]
+[connection signal="body_entered" from="roller/roller zone" to="button" method="_on_roller_zone_body_entered"]
 [connection signal="body_entered" from="roller/roller zone" to="roller/roller zone" method="_on_body_entered"]

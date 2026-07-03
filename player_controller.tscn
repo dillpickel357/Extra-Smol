@@ -139,7 +139,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tn5n"]
-size = Vector2(139, 129)
+size = Vector2(88, 128)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1781048140]
 script = ExtResource("1_f0yg5")
@@ -150,5 +150,5 @@ sprite_frames = SubResource("SpriteFrames_6sj1v")
 animation = &"walk back"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1671413498]
-position = Vector2(-6.5, -0.5)
+position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_8tn5n")
