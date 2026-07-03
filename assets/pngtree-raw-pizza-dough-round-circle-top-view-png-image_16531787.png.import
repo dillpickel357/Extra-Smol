@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kgdhd4ecuav"
-path="res://.godot/imported/simple-white-circle-and-drop-shadow-png.webp-c129ff839170f7e680fd3a93b2a08b41.ctex"
+uid="uid://bvgqdoop6rarv"
+path="res://.godot/imported/pngtree-raw-pizza-dough-round-circle-top-view-png-image_16531787.png-1ba031850c4411b001dbd9046cdbae5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://simple-white-circle-and-drop-shadow-png.webp"
-dest_files=["res://.godot/imported/simple-white-circle-and-drop-shadow-png.webp-c129ff839170f7e680fd3a93b2a08b41.ctex"]
+source_file="res://assets/pngtree-raw-pizza-dough-round-circle-top-view-png-image_16531787.png"
+dest_files=["res://.godot/imported/pngtree-raw-pizza-dough-round-circle-top-view-png-image_16531787.png-1ba031850c4411b001dbd9046cdbae5a.ctex"]
 
 [params]
 

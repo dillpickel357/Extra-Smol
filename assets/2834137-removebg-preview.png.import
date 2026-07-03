@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de8rlol0tq1vv"
-path="res://.godot/imported/blanksquare.jpg-057b8f5020178ba63ffc180805342cac.ctex"
+uid="uid://ccy52x6y03mis"
+path="res://.godot/imported/2834137-removebg-preview.png-fe8e3508584bfed6a99bf210c7b3e8dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://blanksquare.jpg"
-dest_files=["res://.godot/imported/blanksquare.jpg-057b8f5020178ba63ffc180805342cac.ctex"]
+source_file="res://assets/2834137-removebg-preview.png"
+dest_files=["res://.godot/imported/2834137-removebg-preview.png-fe8e3508584bfed6a99bf210c7b3e8dd.ctex"]
 
 [params]
 

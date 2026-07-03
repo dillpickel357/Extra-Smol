@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://du8i54md1xk62"]
 
-[ext_resource type="Texture2D" uid="uid://c8ltenaa36mho" path="res://images.jpg" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://dgc6ox8xwtnlo" path="res://player_controller.tscn" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://cb8r0c6huwawk" path="res://360_F_223060577_Up871tVFzW9s3J5y6ILNQnDiPeOOsBTC.jpg" id="1_lquwl"]
-[ext_resource type="Texture2D" uid="uid://tvj6jinavcgm" path="res://image-removebg-preview.png" id="2_1bvp3"]
-[ext_resource type="Script" uid="uid://dgaos86h8dffx" path="res://pizza_spawner.gd" id="3_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://bvgqdoop6rarv" path="res://pngtree-raw-pizza-dough-round-circle-top-view-png-image_16531787.png" id="4_7mycd"]
+[ext_resource type="Texture2D" uid="uid://c8ltenaa36mho" path="res://assets/images.jpg" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dgc6ox8xwtnlo" path="res://sceencs/player_controller.tscn" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://cb8r0c6huwawk" path="res://assets/360_F_223060577_Up871tVFzW9s3J5y6ILNQnDiPeOOsBTC.jpg" id="1_lquwl"]
+[ext_resource type="Texture2D" uid="uid://tvj6jinavcgm" path="res://assets/image-removebg-preview.png" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://dgaos86h8dffx" path="res://scripts/pizza_spawner.gd" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://cg0ve34w17tgw" path="res://assets/red-button.svg.hi.png" id="4_5vw27"]
+[ext_resource type="Texture2D" uid="uid://bvgqdoop6rarv" path="res://assets/pngtree-raw-pizza-dough-round-circle-top-view-png-image_16531787.png" id="4_7mycd"]
+[ext_resource type="Texture2D" uid="uid://ccy52x6y03mis" path="res://assets/2834137-removebg-preview.png" id="7_272bh"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_6sj1v"]
 
@@ -72,6 +74,16 @@ position = Vector2(-1017.0013, 847.5011)
 scale = Vector2(1.6440684, 1.6440684)
 texture = ExtResource("2_1bvp3")
 
+[node name="RedButton_svg_hi" type="Sprite2D" parent="assets" unique_id=2003530792]
+position = Vector2(420.87762, -1.4364376)
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("4_5vw27")
+
+[node name="2834137RemovebgPreview" type="Sprite2D" parent="assets" unique_id=906227228]
+position = Vector2(-1012.69183, -12.928009)
+scale = Vector2(2.47068, 2.47068)
+texture = ExtResource("7_272bh")
+
 [node name="dough" type="RigidBody2D" parent="assets" unique_id=808717321]
 position = Vector2(-1012.69196, 846.0646)
 scale = Vector2(1.4364425, 1.4364425)
@@ -92,6 +104,7 @@ dough = NodePath("../assets/dough")
 spawn_point = NodePath("spawn")
 stop_point = NodePath("stop")
 speed = 900
+release_delay = 0.1
 
 [node name="spawn" type="Marker2D" parent="pizza spawner" unique_id=251018792]
 position = Vector2(4721, 838)
