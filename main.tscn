@@ -2,12 +2,60 @@
 
 [ext_resource type="Texture2D" uid="uid://c8ltenaa36mho" path="res://images.jpg" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dgc6ox8xwtnlo" path="res://player_controller.tscn" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://cb8r0c6huwawk" path="res://360_F_223060577_Up871tVFzW9s3J5y6ILNQnDiPeOOsBTC.jpg" id="1_lquwl"]
 [ext_resource type="Texture2D" uid="uid://tvj6jinavcgm" path="res://image-removebg-preview.png" id="2_1bvp3"]
 [ext_resource type="Script" uid="uid://dgaos86h8dffx" path="res://pizza_spawner.gd" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bvgqdoop6rarv" path="res://pngtree-raw-pizza-dough-round-circle-top-view-png-image_16531787.png" id="4_7mycd"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_6sj1v"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6sj1v"]
+radius = 151.60474
+
 [node name="main" type="Node2D" unique_id=1058022180]
+
+[node name="background" type="Node2D" parent="." unique_id=1069144787]
+position = Vector2(-3629.9834, 574.64343)
+scale = Vector2(3.9480195, 3.9480195)
+
+[node name="360F223060577Up871tVFzW9s3j5y6ilnQnDiPeOOsBtc4" type="Sprite2D" parent="background" unique_id=257979843]
+position = Vector2(-537.9912, 0.2532959)
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("1_lquwl")
+
+[node name="360F223060577Up871tVFzW9s3j5y6ilnQnDiPeOOsBtc5" type="Sprite2D" parent="background" unique_id=1500358110]
+position = Vector2(3224.3975, 0.09031677)
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("1_lquwl")
+
+[node name="360F223060577Up871tVFzW9s3j5y6ilnQnDiPeOOsBtc6" type="Sprite2D" parent="background" unique_id=2018313539]
+position = Vector2(2686.4063, 0.34361267)
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("1_lquwl")
+
+[node name="360F223060577Up871tVFzW9s3j5y6ilnQnDiPeOOsBtc7" type="Sprite2D" parent="background" unique_id=1214960241]
+position = Vector2(2147.9126, 3.0517578e-05)
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("1_lquwl")
+
+[node name="360F223060577Up871tVFzW9s3j5y6ilnQnDiPeOOsBtc8" type="Sprite2D" parent="background" unique_id=1520131141]
+position = Vector2(1609.9216, 0.25332642)
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("1_lquwl")
+
+[node name="360F223060577Up871tVFzW9s3j5y6ilnQnDiPeOOsBtc" type="Sprite2D" parent="background" unique_id=788921649]
+position = Vector2(1076.485, 0.09031677)
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("1_lquwl")
+
+[node name="360F223060577Up871tVFzW9s3j5y6ilnQnDiPeOOsBtc2" type="Sprite2D" parent="background" unique_id=351992711]
+position = Vector2(538.4938, 0.34361267)
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("1_lquwl")
+
+[node name="360F223060577Up871tVFzW9s3j5y6ilnQnDiPeOOsBtc3" type="Sprite2D" parent="background" unique_id=950924061]
+scale = Vector2(1.0000001, 1.0000001)
+texture = ExtResource("1_lquwl")
 
 [node name="assets" type="Node2D" parent="." unique_id=134250502]
 position = Vector2(707, 249)
@@ -24,22 +72,39 @@ position = Vector2(-1017.0013, 847.5011)
 scale = Vector2(1.6440684, 1.6440684)
 texture = ExtResource("2_1bvp3")
 
-[node name="player controller" parent="." unique_id=402805899 instance=ExtResource("1_ig7tw")]
-position = Vector2(1086, 229.00002)
-scale = Vector2(0.6961643, 0.6961643)
+[node name="dough" type="RigidBody2D" parent="assets" unique_id=808717321]
+position = Vector2(-1012.69196, 846.0646)
+scale = Vector2(1.4364425, 1.4364425)
+mass = 2.95
+gravity_scale = 0.0
+linear_damp = 2.0
 
-[node name="Camera2D" type="Camera2D" parent="player controller" unique_id=413408612]
-position = Vector2(2.872885, -2.1918373e-05)
+[node name="PngtreeRawPizzaDoughRoundCircleTopViewPngImage16531787" type="Sprite2D" parent="assets/dough" unique_id=2037625340]
+texture = ExtResource("4_7mycd")
 
-[node name="pizza spawner" type="Node2D" parent="." unique_id=2114658810 node_paths=PackedStringArray("sprite", "spawn_point", "stop_point")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="assets/dough" unique_id=289550893]
+shape = SubResource("CircleShape2D_6sj1v")
+
+[node name="pizza spawner" type="Node2D" parent="." unique_id=2114658810 node_paths=PackedStringArray("tray", "dough", "spawn_point", "stop_point")]
 script = ExtResource("3_1bvp3")
-sprite = NodePath("../assets/tray")
+tray = NodePath("../assets/tray")
+dough = NodePath("../assets/dough")
 spawn_point = NodePath("spawn")
 stop_point = NodePath("stop")
-speed = 852
+speed = 900
 
 [node name="spawn" type="Marker2D" parent="pizza spawner" unique_id=251018792]
 position = Vector2(4721, 838)
 
 [node name="stop" type="Marker2D" parent="pizza spawner" unique_id=1863419618]
 position = Vector2(0, 838)
+
+[node name="player controller" parent="pizza spawner" unique_id=402805899 instance=ExtResource("1_ig7tw")]
+position = Vector2(0, 229)
+scale = Vector2(0.6961643, 0.6961643)
+push_force = 10
+
+[node name="Camera2D" type="Camera2D" parent="pizza spawner/player controller" unique_id=413408612]
+position = Vector2(2.872885, -2.1918373e-05)
+zoom = Vector2(0.275, 0.275)
+position_smoothing_enabled = true
