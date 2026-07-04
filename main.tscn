@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b1kjupjh4qtwb" path="res://assets/empty-open-glass-jar-isolated-260nw-2215068087-removebg-preview.png" id="13_w48qg"]
 [ext_resource type="Texture2D" uid="uid://b34m6tnp5jive" path="res://assets/image-removebg-preview (1).png" id="14_vivmo"]
 [ext_resource type="FontFile" uid="uid://5pg32oy2d56r" path="res://brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="17_yaehf"]
+[ext_resource type="Texture2D" uid="uid://c85cw1vkpmuba" path="res://assets/image-removebg-preview (4).png" id="18_074og"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ai6g8"]
 radius = 229.83008
@@ -273,7 +274,7 @@ texture = ExtResource("4_7mycd")
 shape = SubResource("CircleShape2D_6sj1v")
 
 [node name="jar" type="RigidBody2D" parent="." unique_id=1375944956]
-position = Vector2(632.00006, -280)
+position = Vector2(456, -280)
 scale = Vector2(0.98083395, 0.9845953)
 collision_layer = 8
 mass = 3.0
@@ -360,18 +361,82 @@ rotation = -0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_6sj1v")
 
-[node name="Label" type="Label" parent="roller" unique_id=566520390]
-offset_left = 291.18387
-offset_top = 165.81476
-offset_right = 566.8519
-offset_bottom = 363.54208
-rotation = 0.7853982
-scale = Vector2(1.8809776, 1.8809776)
+[node name="label" type="Node2D" parent="." unique_id=1160221889]
+position = Vector2(1280, -425)
+rotation = -0.005501838
+scale = Vector2(3.1617985, 3.1617985)
+skew = 0.0110036135
+
+[node name="Label" type="Label" parent="label" unique_id=566520390]
+offset_left = -217.32738
+offset_top = 49.72544
+offset_right = 68.21608
+offset_bottom = 247.45285
+scale = Vector2(0.93228966, 0.93228966)
 theme_override_fonts/font = ExtResource("17_yaehf")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 24
 text = "Press Button to start your first order"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="label" unique_id=534644152]
+offset_left = -786.99744
+offset_top = -16.664913
+offset_right = -501.45398
+offset_bottom = 181.0625
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "push on the handel bars and roll over the dough"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="label" unique_id=732848461]
+offset_left = -334.96118
+offset_top = -176.11345
+offset_right = -49.417725
+offset_bottom = 21.613968
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "add sauce"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="label" unique_id=208100379]
+offset_left = -1483.6987
+offset_top = -177.3732
+offset_right = -1198.1553
+offset_bottom = 20.354218
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 16
+text = "Everything i need you to do while im sleeping 
+
+1. dont break anything and if you do add a explantion 
+
+2.can you make it so when i spill the tomato sauce on the flated pizza it will change sprites into a pizza with tomato sauce on it
+
+3. if you can add ingredients
+
+thats it all you need to do right now you can do more if you finish all this"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ImageRemovebgPreview(4)" type="Sprite2D" parent="." unique_id=1241240558]
+position = Vector2(179, -288.00003)
+scale = Vector2(0.6743245, 0.6743245)
+texture = ExtResource("18_074og")
+
+[node name="ImageRemovebgPreview(4)2" type="Sprite2D" parent="." unique_id=1545412564]
+position = Vector2(-30, -288.00003)
+scale = Vector2(0.6743245, 0.6743245)
+texture = ExtResource("18_074og")
+
+[node name="ImageRemovebgPreview(4)3" type="Sprite2D" parent="." unique_id=2101867197]
+position = Vector2(-248, -280)
+scale = Vector2(0.6743245, 0.6743245)
+texture = ExtResource("18_074og")
 
 [connection signal="body_entered" from="button" to="button" method="_on_body_entered"]
 [connection signal="body_entered" from="cutting board" to="cutting board" method="_on_body_entered"]
