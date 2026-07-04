@@ -390,7 +390,7 @@ scale = Vector2(1.0342422, 1.0342422)
 texture = ExtResource("5_yaehf")
 
 [node name="dough2" type="RigidBody2D" parent="." unique_id=2095504753 groups=["dough"]]
-position = Vector2(3.961668, 1663.0908)
+position = Vector2(5640.9995, -2418)
 scale = Vector2(0.96203524, 0.9694279)
 collision_layer = 4
 collision_mask = 16
