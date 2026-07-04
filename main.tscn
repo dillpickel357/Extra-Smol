@@ -432,8 +432,8 @@ shape = SubResource("CapsuleShape2D_2q4s4")
 [node name="player controller" parent="." unique_id=402805899 instance=ExtResource("1_ig7tw")]
 position = Vector2(0, 229)
 scale = Vector2(0.6961643, 0.6961643)
-collision_layer = 7
-collision_mask = 14
+collision_layer = 255
+collision_mask = 255
 
 [node name="Camera2D" type="Camera2D" parent="player controller" unique_id=413408612]
 position = Vector2(2.872885, -2.1918373e-05)
