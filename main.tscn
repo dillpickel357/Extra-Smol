@@ -404,22 +404,22 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Label4" type="Label" parent="label" unique_id=208100379]
-offset_left = -1483.6987
-offset_top = -177.3732
-offset_right = -1198.1553
-offset_bottom = 20.354218
+offset_left = -1484.7706
+offset_top = -372.2079
+offset_right = -1199.2272
+offset_bottom = 327.7921
 scale = Vector2(0.93228966, 0.93228966)
 theme_override_fonts/font = ExtResource("17_yaehf")
 theme_override_font_sizes/font_size = 16
-text = "Everything i need you to do while im sleeping 
+text = "Everything I'd love you to work on while I'm sleeping
 
-1. dont break anything and if you do add a explantion 
+Please be careful not to break anything — and if something does go wrong, no worries, just leave a quick note explaining what happened so I can catch up in the morning.
+Could you make it so that when I spill tomato sauce on the flattened pizza dough, the sprite changes to a pizza with sauce on it?
+Feel free to add more ingredients too — you can follow the same approach I used for the tomato sauce, or do it however you think works best.
 
-2.can you make it so when i spill the tomato sauce on the flated pizza it will change sprites into a pizza with tomato sauce on it
+talk with des on adding some new sprites instead of these pictures
 
-3. if you can add ingredients
-
-thats it all you need to do right now you can do more if you finish all this"
+That's all I need for now. If you finish everything and want to keep going, go for it — thanks so much!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
