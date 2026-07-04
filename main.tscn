@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://b16ui8gjhavyy" path="res://roller_zone.gd" id="11_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dydg3eygrvaes" path="res://tomato-sauce.png" id="12_82xsv"]
 [ext_resource type="Script" uid="uid://ctkhdwl3m5utp" path="res://detector.gd" id="12_cegan"]
+[ext_resource type="Texture2D" uid="uid://b77jwlmhvordy" path="res://unflatted-dough1.png" id="12_d13ii"]
 [ext_resource type="Texture2D" uid="uid://dkvrhkebghkyh" path="res://assets/images-removebg-preview (1).png" id="12_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://ctheskupkyjsq" path="res://cup-of-grated-gruyère-cheese.webp" id="13_ryguw"]
 [ext_resource type="Script" uid="uid://b4rpv4uxaynil" path="res://detector2.gd" id="14_82xsv"]
@@ -416,7 +417,8 @@ linear_damp = 2.0
 script = ExtResource("9_82xsv")
 
 [node name="dough_sprite" type="Sprite2D" parent="dough" unique_id=2037625340]
-texture = ExtResource("4_7mycd")
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("12_d13ii")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dough" unique_id=289550893]
 shape = SubResource("CircleShape2D_6sj1v")
