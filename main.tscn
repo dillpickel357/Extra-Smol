@@ -17,9 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://dydg3eygrvaes" path="res://tomato-sauce.png" id="12_82xsv"]
 [ext_resource type="Script" uid="uid://ctkhdwl3m5utp" path="res://detector.gd" id="12_cegan"]
 [ext_resource type="Texture2D" uid="uid://dkvrhkebghkyh" path="res://assets/images-removebg-preview (1).png" id="12_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://ctheskupkyjsq" path="res://cup-of-grated-gruyère-cheese.webp" id="13_ryguw"]
+[ext_resource type="Script" uid="uid://b4rpv4uxaynil" path="res://detector2.gd" id="14_82xsv"]
 [ext_resource type="Texture2D" uid="uid://b34m6tnp5jive" path="res://assets/image-removebg-preview (1).png" id="14_vivmo"]
+[ext_resource type="Texture2D" uid="uid://dn1qf281jkwgd" path="res://Garlic-cheese-pizza_9.webp" id="15_getpj"]
 [ext_resource type="FontFile" uid="uid://5pg32oy2d56r" path="res://brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="17_yaehf"]
-[ext_resource type="Texture2D" uid="uid://c85cw1vkpmuba" path="res://assets/image-removebg-preview (4).png" id="18_074og"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ai6g8"]
 radius = 229.83008
@@ -364,6 +366,22 @@ position = Vector2(-4014.8567, -3759.17)
 scale = Vector2(1.0342422, 1.0342422)
 texture = ExtResource("5_yaehf")
 
+[node name="dough2" type="RigidBody2D" parent="." unique_id=2095504753 groups=["dough"]]
+position = Vector2(3.961668, 1663.0908)
+scale = Vector2(0.96203524, 0.9694279)
+collision_layer = 4
+collision_mask = 16
+mass = 3.0
+gravity_scale = 0.0
+linear_damp = 2.0
+script = ExtResource("9_82xsv")
+
+[node name="dough_sprite" type="Sprite2D" parent="dough2" unique_id=2455291]
+texture = ExtResource("4_7mycd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dough2" unique_id=229029487]
+shape = SubResource("CircleShape2D_6sj1v")
+
 [node name="dough" type="RigidBody2D" parent="." unique_id=808717321 groups=["dough"]]
 position = Vector2(2, 837.99994)
 scale = Vector2(0.98083395, 0.9845953)
@@ -390,6 +408,37 @@ collision_mask = 14
 position = Vector2(2.872885, -2.1918373e-05)
 zoom = Vector2(0.275, 0.275)
 position_smoothing_enabled = true
+
+[node name="jar2" type="RigidBody2D" parent="." unique_id=1222119849]
+position = Vector2(191.99997, -280)
+scale = Vector2(0.96203536, 0.9694279)
+collision_layer = 16
+collision_mask = 15
+mass = 3.0
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp = 2.0
+
+[node name="Sprite" type="Sprite2D" parent="jar2" unique_id=51340391]
+texture_filter = 1
+position = Vector2(3.1721887e-05, 34.040695)
+scale = Vector2(0.515, 0.515)
+texture = ExtResource("13_ryguw")
+
+[node name="Detector" type="Area2D" parent="jar2" unique_id=1435292261]
+collision_layer = 16
+collision_mask = 255
+script = ExtResource("14_82xsv")
+new_texture = ExtResource("15_getpj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jar2/Detector" unique_id=1488170856]
+position = Vector2(1.0195407, -4.062583)
+shape = SubResource("CircleShape2D_cegan")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jar2" unique_id=338844179]
+position = Vector2(1.1920929e-06, 37.57889)
+scale = Vector2(1.0000002, 1)
+shape = SubResource("CircleShape2D_8tn5n")
 
 [node name="jar" type="RigidBody2D" parent="." unique_id=1375944956]
 position = Vector2(456, -280)
@@ -475,23 +524,9 @@ rotation = -0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_6sj1v")
 
-[node name="ImageRemovebgPreview(4)" type="Sprite2D" parent="." unique_id=1241240558]
-position = Vector2(179, -288.00003)
-scale = Vector2(0.6743245, 0.6743245)
-texture = ExtResource("18_074og")
-
-[node name="ImageRemovebgPreview(4)2" type="Sprite2D" parent="." unique_id=1545412564]
-position = Vector2(-30, -288.00003)
-scale = Vector2(0.6743245, 0.6743245)
-texture = ExtResource("18_074og")
-
-[node name="ImageRemovebgPreview(4)3" type="Sprite2D" parent="." unique_id=2101867197]
-position = Vector2(-248, -280)
-scale = Vector2(0.6743245, 0.6743245)
-texture = ExtResource("18_074og")
-
 [connection signal="body_entered" from="button" to="button" method="_on_body_entered"]
 [connection signal="body_entered" from="cutting board" to="cutting board" method="_on_body_entered"]
+[connection signal="body_entered" from="jar2/Detector" to="jar2/Detector" method="_on_body_entered"]
 [connection signal="body_entered" from="jar/Detector" to="jar/Detector" method="_on_body_entered"]
 [connection signal="body_entered" from="roller" to="button" method="_on_roller_body_entered"]
 [connection signal="body_entered" from="roller/roller zone" to="button" method="_on_roller_zone_body_entered"]
