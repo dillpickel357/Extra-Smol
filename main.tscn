@@ -210,6 +210,107 @@ position = Vector2(-3.5416298, -322.53043)
 scale = Vector2(1.0000001, 1.0000001)
 texture = ExtResource("1_lquwl")
 
+[node name="label" type="Node2D" parent="." unique_id=1160221889]
+position = Vector2(1280.001, -425.00003)
+rotation = -0.005501838
+scale = Vector2(3.1617985, 3.1617985)
+skew = 0.0110036135
+
+[node name="Label" type="Label" parent="label" unique_id=566520390]
+offset_left = -217.32738
+offset_top = 49.72544
+offset_right = 68.21608
+offset_bottom = 247.45285
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "Press Button to start your first order"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="label/Label" unique_id=1336593973]
+layout_mode = 0
+offset_left = -134.44972
+offset_top = -204.29051
+offset_right = 51.550278
+offset_bottom = -18.290512
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "Flatten it before putting sauce on it"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="label" unique_id=534644152]
+offset_left = -786.99744
+offset_top = -16.664913
+offset_right = -501.45398
+offset_bottom = 181.0625
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "push on the handel bars and roll over the dough"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="label" unique_id=208100379]
+offset_left = -1484.7706
+offset_top = -372.2079
+offset_right = -1199.2272
+offset_bottom = 327.7921
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 16
+text = "Everything I'd love you to work on while I'm sleeping
+
+Please be careful not to break anything — and if something does go wrong, no worries, just leave a quick note explaining what happened so I can catch up in the morning.
+Could you make it so that when I spill tomato sauce on the flattened pizza dough, the sprite changes to a pizza with sauce on it?
+Feel free to add more ingredients too — you can follow the same approach I used for the tomato sauce, or do it however you think works best.
+
+talk with des on adding some new sprites instead of these pictures
+
+That's all I need for now. If you finish everything and want to keep going, go for it — thanks so much!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="label" unique_id=120547716]
+offset_left = 162.7855
+offset_top = -420.39
+offset_right = 448.3291
+offset_bottom = 89.609985
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "I also added a group called \"dough\"
+to dinamically
+check for dough. so you don't need everytime you check to manually add a reference to the dough and you can just check the dough group"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="label" unique_id=784177171]
+offset_left = -417.1565
+offset_top = -399.22717
+offset_right = -131.61304
+offset_bottom = -159.22717
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "I added some sauce functionality. I changed the rollerzone Script and added the dough script"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="label" unique_id=968385530]
+offset_left = -1127.7518
+offset_top = -325.9643
+offset_right = -842.2084
+offset_bottom = -85.964294
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "We should also discuss more before we misunderstand / have different directions we're going in"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="button" type="Area2D" parent="." unique_id=141482941 node_paths=PackedStringArray("conveyor")]
 position = Vector2(1000, 248)
 scale = Vector2(0.6961644, 0.6961644)
@@ -378,68 +479,6 @@ position = Vector2(0.03703642, 0.018531322)
 rotation = -0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_6sj1v")
-
-[node name="label" type="Node2D" parent="." unique_id=1160221889]
-position = Vector2(1280, -425)
-rotation = -0.005501838
-scale = Vector2(3.1617985, 3.1617985)
-skew = 0.0110036135
-
-[node name="Label" type="Label" parent="label" unique_id=566520390]
-offset_left = -217.32738
-offset_top = 49.72544
-offset_right = 68.21608
-offset_bottom = 247.45285
-scale = Vector2(0.93228966, 0.93228966)
-theme_override_fonts/font = ExtResource("17_yaehf")
-theme_override_font_sizes/font_size = 24
-text = "Press Button to start your first order"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Label2" type="Label" parent="label" unique_id=534644152]
-offset_left = -786.99744
-offset_top = -16.664913
-offset_right = -501.45398
-offset_bottom = 181.0625
-scale = Vector2(0.93228966, 0.93228966)
-theme_override_fonts/font = ExtResource("17_yaehf")
-theme_override_font_sizes/font_size = 24
-text = "push on the handel bars and roll over the dough"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Label3" type="Label" parent="label" unique_id=732848461]
-offset_left = -334.96118
-offset_top = -176.11345
-offset_right = -49.417725
-offset_bottom = 21.613968
-scale = Vector2(0.93228966, 0.93228966)
-theme_override_fonts/font = ExtResource("17_yaehf")
-theme_override_font_sizes/font_size = 24
-text = "add sauce"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Label4" type="Label" parent="label" unique_id=208100379]
-offset_left = -1484.7706
-offset_top = -372.2079
-offset_right = -1199.2272
-offset_bottom = 327.7921
-scale = Vector2(0.93228966, 0.93228966)
-theme_override_fonts/font = ExtResource("17_yaehf")
-theme_override_font_sizes/font_size = 16
-text = "Everything I'd love you to work on while I'm sleeping
-
-Please be careful not to break anything — and if something does go wrong, no worries, just leave a quick note explaining what happened so I can catch up in the morning.
-Could you make it so that when I spill tomato sauce on the flattened pizza dough, the sprite changes to a pizza with sauce on it?
-Feel free to add more ingredients too — you can follow the same approach I used for the tomato sauce, or do it however you think works best.
-
-talk with des on adding some new sprites instead of these pictures
-
-That's all I need for now. If you finish everything and want to keep going, go for it — thanks so much!"
-horizontal_alignment = 1
-autowrap_mode = 2
 
 [node name="ImageRemovebgPreview(4)" type="Sprite2D" parent="." unique_id=1241240558]
 position = Vector2(179, -288.00003)
