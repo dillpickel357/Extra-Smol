@@ -14,4 +14,4 @@ func _on_body_entered(body: Node2D) -> void:
 				var target_sprite = body.get_node("dough_sprite") as Sprite2D
 				# Use 'new_texture' (matches the @export variable), not 'newSprite'
 				if target_sprite and new_texture:
-					target_sprite.texture = new_texture   
+					target_sprite.texture = new_texture

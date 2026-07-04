@@ -14,9 +14,9 @@
 [ext_resource type="Script" uid="uid://cr12gcxr3mv7e" path="res://dough.gd" id="9_82xsv"]
 [ext_resource type="Texture2D" uid="uid://cx3rwrwas8bb" path="res://assets/images-removebg-preview.png" id="10_4c57u"]
 [ext_resource type="Script" uid="uid://b16ui8gjhavyy" path="res://roller_zone.gd" id="11_dg77c"]
+[ext_resource type="Texture2D" uid="uid://dydg3eygrvaes" path="res://tomato-sauce.png" id="12_82xsv"]
 [ext_resource type="Script" uid="uid://ctkhdwl3m5utp" path="res://detector.gd" id="12_cegan"]
 [ext_resource type="Texture2D" uid="uid://dkvrhkebghkyh" path="res://assets/images-removebg-preview (1).png" id="12_ycdy4"]
-[ext_resource type="Texture2D" uid="uid://b1kjupjh4qtwb" path="res://assets/empty-open-glass-jar-isolated-260nw-2215068087-removebg-preview.png" id="13_w48qg"]
 [ext_resource type="Texture2D" uid="uid://b34m6tnp5jive" path="res://assets/image-removebg-preview (1).png" id="14_vivmo"]
 [ext_resource type="FontFile" uid="uid://5pg32oy2d56r" path="res://brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="17_yaehf"]
 [ext_resource type="Texture2D" uid="uid://c85cw1vkpmuba" path="res://assets/image-removebg-preview (4).png" id="18_074og"]
@@ -33,10 +33,10 @@ size = Vector2(451.1627, 334.88367)
 radius = 144.78903
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cegan"]
-radius = 188.61502
+radius = 128.46614
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8tn5n"]
-radius = 114.18854
+radius = 82.682724
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6sj1v"]
 radius = 37.480858
@@ -332,8 +332,8 @@ collision_layer = 15
 collision_mask = 15
 script = ExtResource("4_2cqfq")
 target = NodePath("../jar")
-node_to_delete = NodePath("../jar/EmptyOpenGlassJarIsolated260Nw2215068087RemovebgPreview/ImageRemovebgPreview(1)")
-sprite_to_change = NodePath("../jar/EmptyOpenGlassJarIsolated260Nw2215068087RemovebgPreview")
+node_to_delete = NodePath("")
+sprite_to_change = NodePath("../jar/Sprite")
 new_texture = ExtResource("5_yaehf")
 
 [node name="cutting board" type="Sprite2D" parent="cutting board" unique_id=906227228]
@@ -388,17 +388,13 @@ collision_layer = 16
 collision_mask = 15
 mass = 3.0
 gravity_scale = 0.0
+lock_rotation = true
 linear_damp = 2.0
 
-[node name="EmptyOpenGlassJarIsolated260Nw2215068087RemovebgPreview" type="Sprite2D" parent="jar" unique_id=1992982141]
-position = Vector2(2.8764648, 6.093872)
-scale = Vector2(1.2380135, 1.233284)
-texture = ExtResource("13_w48qg")
-
-[node name="ImageRemovebgPreview(1)" type="Sprite2D" parent="jar/EmptyOpenGlassJarIsolated260Nw2215068087RemovebgPreview" unique_id=548262211]
-position = Vector2(-2.3234863, -11.529388)
-scale = Vector2(0.45574874, 0.4557487)
-texture = ExtResource("14_vivmo")
+[node name="Sprite" type="Sprite2D" parent="jar" unique_id=1992982141]
+texture_filter = 1
+scale = Vector2(8, 8)
+texture = ExtResource("12_82xsv")
 
 [node name="Detector" type="Area2D" parent="jar" unique_id=2066701943]
 collision_layer = 16
