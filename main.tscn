@@ -230,19 +230,6 @@ text = "Press Button to start your first order"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="label/Label" unique_id=1336593973]
-layout_mode = 0
-offset_left = -134.44972
-offset_top = -204.29051
-offset_right = 51.550278
-offset_bottom = -18.290512
-scale = Vector2(0.93228966, 0.93228966)
-theme_override_fonts/font = ExtResource("17_yaehf")
-theme_override_font_sizes/font_size = 24
-text = "Flatten it before putting sauce on it"
-horizontal_alignment = 1
-autowrap_mode = 2
-
 [node name="Label2" type="Label" parent="label" unique_id=534644152]
 offset_left = -786.99744
 offset_top = -16.664913
@@ -310,6 +297,42 @@ scale = Vector2(0.93228966, 0.93228966)
 theme_override_fonts/font = ExtResource("17_yaehf")
 theme_override_font_sizes/font_size = 24
 text = "We should also discuss more before we misunderstand / have different directions we're going in"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label7" type="Label" parent="label" unique_id=2086355249]
+offset_left = -766.5242
+offset_top = -261.9859
+offset_right = -580.5242
+offset_bottom = -75.9859
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "added cheese"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label8" type="Label" parent="label" unique_id=1336593973]
+offset_left = -342.67343
+offset_top = -140.73248
+offset_right = -156.67343
+offset_bottom = 45.267517
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "Flatten it before putting sauce on it"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label9" type="Label" parent="label" unique_id=158570148]
+offset_left = 628.58044
+offset_top = -321.04538
+offset_right = 814.58044
+offset_bottom = 323.95462
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "sorry for breaking the spawner but i wanted to improve the spawner because now you can only spawn dough once and i didn't even notice that i broke it sry"
 horizontal_alignment = 1
 autowrap_mode = 2
 
