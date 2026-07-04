@@ -5,9 +5,5 @@ extends Area2D
 @export var new_texture: Texture2D
 
 func _on_body_entered(body):
-	if body.is_in_group("dough"):
-		var sprite = body.get_node("Sprite2D");
-		if sprite != null:
-			sprite.texture = new_texture
-		else: 
-			print("Sprite Is Null")
+	if body == target:            # ignore everything except your chosen collider
+		sprite_to_change.texture = new_texture

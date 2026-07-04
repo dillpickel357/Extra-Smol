@@ -14,14 +14,14 @@ script = ExtResource("1_3w4b7")
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_4istd")
 
-[node name="dough" type="RigidBody2D" parent="." unique_id=1267660686 groups=["dough"]]
+[node name="dough" type="RigidBody2D" parent="." unique_id=1267660686]
 scale = Vector2(0.98083395, 0.9845953)
 collision_layer = 4
 mass = 3.0
 gravity_scale = 0.0
 linear_damp = 2.0
 
-[node name="Sprite2D" type="Sprite2D" parent="dough" unique_id=1344492769]
+[node name="PngtreeRawPizzaDoughRoundCircleTopViewPngImage16531787" type="Sprite2D" parent="dough" unique_id=1344492769]
 texture = ExtResource("1_y70ql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dough" unique_id=672947745]
