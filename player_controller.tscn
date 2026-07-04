@@ -82,7 +82,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3eoxc")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walk back",
 "speed": 5.0
 }, {
@@ -99,7 +99,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4garc")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walk forward",
 "speed": 5.0
 }, {
@@ -116,7 +116,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2x3ds")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walk left",
 "speed": 5.0
 }, {
@@ -133,7 +133,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kgs87")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walk right",
 "speed": 5.0
 }]

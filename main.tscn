@@ -36,7 +36,7 @@ radius = 144.78903
 radius = 128.46614
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8tn5n"]
-radius = 82.682724
+radius = 77.48508
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6sj1v"]
 radius = 37.480858
@@ -325,14 +325,13 @@ texture = ExtResource("4_5vw27")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="button" unique_id=168260247]
 shape = SubResource("CircleShape2D_ai6g8")
 
-[node name="cutting board" type="Area2D" parent="." unique_id=438960369 node_paths=PackedStringArray("target", "node_to_delete", "sprite_to_change")]
+[node name="cutting board" type="Area2D" parent="." unique_id=438960369 node_paths=PackedStringArray("target", "sprite_to_change")]
 position = Vector2(-32, 287.99997)
 scale = Vector2(1.72, 1.72)
 collision_layer = 15
 collision_mask = 15
 script = ExtResource("4_2cqfq")
 target = NodePath("../jar")
-node_to_delete = NodePath("")
 sprite_to_change = NodePath("../jar/Sprite")
 new_texture = ExtResource("5_yaehf")
 
@@ -381,6 +380,17 @@ texture = ExtResource("4_7mycd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dough" unique_id=289550893]
 shape = SubResource("CircleShape2D_6sj1v")
 
+[node name="player controller" parent="." unique_id=402805899 instance=ExtResource("1_ig7tw")]
+position = Vector2(0, 229)
+scale = Vector2(0.6961643, 0.6961643)
+collision_layer = 7
+collision_mask = 14
+
+[node name="Camera2D" type="Camera2D" parent="player controller" unique_id=413408612]
+position = Vector2(2.872885, -2.1918373e-05)
+zoom = Vector2(0.275, 0.275)
+position_smoothing_enabled = true
+
 [node name="jar" type="RigidBody2D" parent="." unique_id=1375944956]
 position = Vector2(456, -280)
 scale = Vector2(0.98083395, 0.9845953)
@@ -407,7 +417,7 @@ position = Vector2(1.0195407, -4.062583)
 shape = SubResource("CircleShape2D_cegan")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="jar" unique_id=798372865]
-position = Vector2(-6.1035156e-05, -8.125214)
+position = Vector2(1.1920929e-06, 37.57889)
 scale = Vector2(1.0000002, 1)
 shape = SubResource("CircleShape2D_8tn5n")
 
@@ -425,17 +435,6 @@ position = Vector2(4721, 838)
 
 [node name="stop" type="Marker2D" parent="pizza spawner" unique_id=1863419618]
 position = Vector2(0, 838)
-
-[node name="player controller" parent="." unique_id=402805899 instance=ExtResource("1_ig7tw")]
-position = Vector2(0, 229)
-scale = Vector2(0.6961643, 0.6961643)
-collision_layer = 7
-collision_mask = 14
-
-[node name="Camera2D" type="Camera2D" parent="player controller" unique_id=413408612]
-position = Vector2(2.872885, -2.1918373e-05)
-zoom = Vector2(0.275, 0.275)
-position_smoothing_enabled = true
 
 [node name="roller" type="RigidBody2D" parent="." unique_id=1288896649]
 position = Vector2(-9.536743e-07, -16.000015)
