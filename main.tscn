@@ -35,6 +35,10 @@ size = Vector2(451.1627, 334.88367)
 [sub_resource type="CircleShape2D" id="CircleShape2D_6sj1v"]
 radius = 144.78903
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2q4s4"]
+radius = 120.4314
+height = 288.8952
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_cegan"]
 radius = 128.46614
 
@@ -421,7 +425,9 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("12_d13ii")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dough" unique_id=289550893]
-shape = SubResource("CircleShape2D_6sj1v")
+position = Vector2(-10.195406, -6.093813)
+rotation = 1.3089969
+shape = SubResource("CapsuleShape2D_2q4s4")
 
 [node name="player controller" parent="." unique_id=402805899 instance=ExtResource("1_ig7tw")]
 position = Vector2(0, 229)
