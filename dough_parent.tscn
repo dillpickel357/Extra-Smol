@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://t7mgn7ovv5p6"]
 
-[ext_resource type="Script" path="res://scenes/dough.gd" id="1_vlk7j"]
 [ext_resource type="Texture2D" uid="uid://tvj6jinavcgm" path="res://assets/image-removebg-preview.png" id="2_jonm2"]
 [ext_resource type="Texture2D" uid="uid://bvgqdoop6rarv" path="res://assets/pngtree-raw-pizza-dough-round-circle-top-view-png-image_16531787.png" id="3_1r44m"]
 
@@ -8,7 +7,6 @@
 radius = 144.78903
 
 [node name="DoughParent" type="Node2D" unique_id=972178948]
-script = ExtResource("1_vlk7j")
 
 [node name="tray" type="Sprite2D" parent="." unique_id=1879811302]
 scale = Vector2(1.2, 1.2)

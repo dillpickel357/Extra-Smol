@@ -8,4 +8,5 @@ func _on_body_entered(body):
 
 
 func _on_cutting_board_body_entered(body: Node2D) -> void:
+	
 	pass # Replace with function body.

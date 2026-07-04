@@ -11,13 +11,18 @@
 [ext_resource type="Texture2D" uid="uid://bvgqdoop6rarv" path="res://assets/pngtree-raw-pizza-dough-round-circle-top-view-png-image_16531787.png" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://h8silxg8cad" path="res://assets/image-removebg-preview (2).png" id="5_yaehf"]
 [ext_resource type="Texture2D" uid="uid://ccy52x6y03mis" path="res://assets/2834137-removebg-preview.png" id="7_272bh"]
+[ext_resource type="Script" uid="uid://cr12gcxr3mv7e" path="res://dough.gd" id="9_82xsv"]
 [ext_resource type="Texture2D" uid="uid://cx3rwrwas8bb" path="res://assets/images-removebg-preview.png" id="10_4c57u"]
 [ext_resource type="Script" uid="uid://b16ui8gjhavyy" path="res://roller_zone.gd" id="11_dg77c"]
+[ext_resource type="Texture2D" uid="uid://dydg3eygrvaes" path="res://tomato-sauce.png" id="12_82xsv"]
+[ext_resource type="Script" uid="uid://ctkhdwl3m5utp" path="res://detector.gd" id="12_cegan"]
+[ext_resource type="Texture2D" uid="uid://b77jwlmhvordy" path="res://unflatted-dough1.png" id="12_d13ii"]
 [ext_resource type="Texture2D" uid="uid://dkvrhkebghkyh" path="res://assets/images-removebg-preview (1).png" id="12_ycdy4"]
-[ext_resource type="Texture2D" uid="uid://b1kjupjh4qtwb" path="res://assets/empty-open-glass-jar-isolated-260nw-2215068087-removebg-preview.png" id="13_w48qg"]
+[ext_resource type="Texture2D" uid="uid://ctheskupkyjsq" path="res://cup-of-grated-gruyère-cheese.webp" id="13_ryguw"]
+[ext_resource type="Script" uid="uid://b4rpv4uxaynil" path="res://detector2.gd" id="14_82xsv"]
 [ext_resource type="Texture2D" uid="uid://b34m6tnp5jive" path="res://assets/image-removebg-preview (1).png" id="14_vivmo"]
+[ext_resource type="Texture2D" uid="uid://dn1qf281jkwgd" path="res://Garlic-cheese-pizza_9.webp" id="15_getpj"]
 [ext_resource type="FontFile" uid="uid://5pg32oy2d56r" path="res://brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="17_yaehf"]
-[ext_resource type="Texture2D" uid="uid://c85cw1vkpmuba" path="res://assets/image-removebg-preview (4).png" id="18_074og"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ai6g8"]
 radius = 229.83008
@@ -30,8 +35,15 @@ size = Vector2(451.1627, 334.88367)
 [sub_resource type="CircleShape2D" id="CircleShape2D_6sj1v"]
 radius = 144.78903
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2q4s4"]
+radius = 120.4314
+height = 288.8952
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cegan"]
+radius = 128.46614
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_8tn5n"]
-radius = 114.18854
+radius = 77.48508
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6sj1v"]
 radius = 37.480858
@@ -205,6 +217,130 @@ position = Vector2(-3.5416298, -322.53043)
 scale = Vector2(1.0000001, 1.0000001)
 texture = ExtResource("1_lquwl")
 
+[node name="label" type="Node2D" parent="." unique_id=1160221889]
+position = Vector2(1280.001, -425.00003)
+rotation = -0.005501838
+scale = Vector2(3.1617985, 3.1617985)
+skew = 0.0110036135
+
+[node name="Label" type="Label" parent="label" unique_id=566520390]
+offset_left = -217.32738
+offset_top = 49.72544
+offset_right = 68.21608
+offset_bottom = 247.45285
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "Press Button to start your first order"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="label" unique_id=534644152]
+offset_left = -786.99744
+offset_top = -16.664913
+offset_right = -501.45398
+offset_bottom = 181.0625
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "push on the handel bars and roll over the dough"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="label" unique_id=208100379]
+offset_left = -1484.7706
+offset_top = -372.2079
+offset_right = -1199.2272
+offset_bottom = 327.7921
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 16
+text = "Everything I'd love you to work on while I'm sleeping
+
+Please be careful not to break anything — and if something does go wrong, no worries, just leave a quick note explaining what happened so I can catch up in the morning.
+Could you make it so that when I spill tomato sauce on the flattened pizza dough, the sprite changes to a pizza with sauce on it?
+Feel free to add more ingredients too — you can follow the same approach I used for the tomato sauce, or do it however you think works best.
+
+talk with des on adding some new sprites instead of these pictures
+
+That's all I need for now. If you finish everything and want to keep going, go for it — thanks so much!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="label" unique_id=120547716]
+offset_left = 162.7855
+offset_top = -420.39
+offset_right = 448.3291
+offset_bottom = 89.609985
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "I also added a group called \"dough\"
+to dinamically
+check for dough. so you don't need everytime you check to manually add a reference to the dough and you can just check the dough group"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="label" unique_id=784177171]
+offset_left = -417.1565
+offset_top = -399.22717
+offset_right = -131.61304
+offset_bottom = -159.22717
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "I added some sauce functionality. I changed the rollerzone Script and added the dough script"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="label" unique_id=968385530]
+offset_left = -1127.7518
+offset_top = -325.9643
+offset_right = -842.2084
+offset_bottom = -85.964294
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "We should also discuss more before we misunderstand / have different directions we're going in"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label7" type="Label" parent="label" unique_id=2086355249]
+offset_left = -766.5242
+offset_top = -261.9859
+offset_right = -580.5242
+offset_bottom = -75.9859
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "added cheese"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label8" type="Label" parent="label" unique_id=1336593973]
+offset_left = -342.67343
+offset_top = -140.73248
+offset_right = -156.67343
+offset_bottom = 45.267517
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "Flatten it before putting sauce on it"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label9" type="Label" parent="label" unique_id=158570148]
+offset_left = 628.58044
+offset_top = -321.04538
+offset_right = 814.58044
+offset_bottom = 323.95462
+scale = Vector2(0.93228966, 0.93228966)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 24
+text = "sorry for breaking the spawner but i wanted to improve the spawner because now you can only spawn dough once and i didn't even notice that i broke it sry"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="button" type="Area2D" parent="." unique_id=141482941 node_paths=PackedStringArray("conveyor")]
 position = Vector2(1000, 248)
 scale = Vector2(0.6961644, 0.6961644)
@@ -219,15 +355,14 @@ texture = ExtResource("4_5vw27")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="button" unique_id=168260247]
 shape = SubResource("CircleShape2D_ai6g8")
 
-[node name="cutting board" type="Area2D" parent="." unique_id=438960369 node_paths=PackedStringArray("target", "node_to_delete", "sprite_to_change")]
+[node name="cutting board" type="Area2D" parent="." unique_id=438960369 node_paths=PackedStringArray("target", "sprite_to_change")]
 position = Vector2(-32, 287.99997)
 scale = Vector2(1.72, 1.72)
 collision_layer = 15
 collision_mask = 15
 script = ExtResource("4_2cqfq")
 target = NodePath("../jar")
-node_to_delete = NodePath("../jar/EmptyOpenGlassJarIsolated260Nw2215068087RemovebgPreview/ImageRemovebgPreview(1)")
-sprite_to_change = NodePath("../jar/EmptyOpenGlassJarIsolated260Nw2215068087RemovebgPreview")
+sprite_to_change = NodePath("../jar/Sprite")
 new_texture = ExtResource("5_yaehf")
 
 [node name="cutting board" type="Sprite2D" parent="cutting board" unique_id=906227228]
@@ -259,40 +394,111 @@ position = Vector2(-4014.8567, -3759.17)
 scale = Vector2(1.0342422, 1.0342422)
 texture = ExtResource("5_yaehf")
 
-[node name="dough" type="RigidBody2D" parent="." unique_id=808717321]
-position = Vector2(2, 837.99994)
-scale = Vector2(0.98083395, 0.9845953)
+[node name="dough2" type="RigidBody2D" parent="." unique_id=2095504753 groups=["dough"]]
+position = Vector2(5640.9995, -2418)
+scale = Vector2(0.96203524, 0.9694279)
 collision_layer = 4
+collision_mask = 16
 mass = 3.0
 gravity_scale = 0.0
 linear_damp = 2.0
+script = ExtResource("9_82xsv")
 
-[node name="PngtreeRawPizzaDoughRoundCircleTopViewPngImage16531787" type="Sprite2D" parent="dough" unique_id=2037625340]
+[node name="dough_sprite" type="Sprite2D" parent="dough2" unique_id=2455291]
 texture = ExtResource("4_7mycd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dough" unique_id=289550893]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dough2" unique_id=229029487]
 shape = SubResource("CircleShape2D_6sj1v")
+
+[node name="dough" type="RigidBody2D" parent="." unique_id=808717321 groups=["dough"]]
+position = Vector2(2, 837.99994)
+scale = Vector2(0.98083395, 0.9845953)
+collision_layer = 4
+collision_mask = 16
+mass = 3.0
+gravity_scale = 0.0
+linear_damp = 2.0
+script = ExtResource("9_82xsv")
+
+[node name="dough_sprite" type="Sprite2D" parent="dough" unique_id=2037625340]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("12_d13ii")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dough" unique_id=289550893]
+position = Vector2(-10.195406, -6.093813)
+rotation = 1.3089969
+shape = SubResource("CapsuleShape2D_2q4s4")
+
+[node name="player controller" parent="." unique_id=402805899 instance=ExtResource("1_ig7tw")]
+position = Vector2(0, 229)
+scale = Vector2(0.6961643, 0.6961643)
+collision_layer = 255
+collision_mask = 255
+
+[node name="Camera2D" type="Camera2D" parent="player controller" unique_id=413408612]
+position = Vector2(2.872885, -2.1918373e-05)
+zoom = Vector2(0.275, 0.275)
+position_smoothing_enabled = true
+
+[node name="jar2" type="RigidBody2D" parent="." unique_id=1222119849]
+position = Vector2(191.99997, -280)
+scale = Vector2(0.96203536, 0.9694279)
+collision_layer = 16
+collision_mask = 15
+mass = 3.0
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp = 2.0
+
+[node name="Sprite" type="Sprite2D" parent="jar2" unique_id=51340391]
+texture_filter = 1
+position = Vector2(3.1721887e-05, 34.040695)
+scale = Vector2(0.515, 0.515)
+texture = ExtResource("13_ryguw")
+
+[node name="Detector" type="Area2D" parent="jar2" unique_id=1435292261]
+collision_layer = 16
+collision_mask = 255
+script = ExtResource("14_82xsv")
+new_texture = ExtResource("15_getpj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jar2/Detector" unique_id=1488170856]
+position = Vector2(1.0195407, -4.062583)
+shape = SubResource("CircleShape2D_cegan")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jar2" unique_id=338844179]
+position = Vector2(1.1920929e-06, 37.57889)
+scale = Vector2(1.0000002, 1)
+shape = SubResource("CircleShape2D_8tn5n")
 
 [node name="jar" type="RigidBody2D" parent="." unique_id=1375944956]
 position = Vector2(456, -280)
 scale = Vector2(0.98083395, 0.9845953)
-collision_layer = 8
+collision_layer = 16
+collision_mask = 15
 mass = 3.0
 gravity_scale = 0.0
+lock_rotation = true
 linear_damp = 2.0
 
-[node name="EmptyOpenGlassJarIsolated260Nw2215068087RemovebgPreview" type="Sprite2D" parent="jar" unique_id=1992982141]
-position = Vector2(2.8764648, 6.093872)
-scale = Vector2(1.2380135, 1.233284)
-texture = ExtResource("13_w48qg")
+[node name="Sprite" type="Sprite2D" parent="jar" unique_id=1992982141]
+texture_filter = 1
+scale = Vector2(8, 8)
+texture = ExtResource("12_82xsv")
 
-[node name="ImageRemovebgPreview(1)" type="Sprite2D" parent="jar/EmptyOpenGlassJarIsolated260Nw2215068087RemovebgPreview" unique_id=548262211]
-position = Vector2(-2.3234863, -11.529388)
-scale = Vector2(0.45574874, 0.4557487)
-texture = ExtResource("14_vivmo")
+[node name="Detector" type="Area2D" parent="jar" unique_id=2066701943]
+collision_layer = 16
+collision_mask = 255
+script = ExtResource("12_cegan")
+new_texture = ExtResource("14_vivmo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jar/Detector" unique_id=1205795344]
+position = Vector2(1.0195407, -4.062583)
+shape = SubResource("CircleShape2D_cegan")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="jar" unique_id=798372865]
-position = Vector2(-6.2227824e-05, -8.125166)
+position = Vector2(1.1920929e-06, 37.57889)
+scale = Vector2(1.0000002, 1)
 shape = SubResource("CircleShape2D_8tn5n")
 
 [node name="pizza spawner" type="Node2D" parent="." unique_id=2114658810 node_paths=PackedStringArray("tray", "dough", "spawn_point", "stop_point")]
@@ -309,17 +515,6 @@ position = Vector2(4721, 838)
 
 [node name="stop" type="Marker2D" parent="pizza spawner" unique_id=1863419618]
 position = Vector2(0, 838)
-
-[node name="player controller" parent="." unique_id=402805899 instance=ExtResource("1_ig7tw")]
-position = Vector2(0, 229)
-scale = Vector2(0.6961643, 0.6961643)
-collision_layer = 7
-collision_mask = 14
-
-[node name="Camera2D" type="Camera2D" parent="player controller" unique_id=413408612]
-position = Vector2(2.872885, -2.1918373e-05)
-zoom = Vector2(0.275, 0.275)
-position_smoothing_enabled = true
 
 [node name="roller" type="RigidBody2D" parent="." unique_id=1288896649]
 position = Vector2(-9.536743e-07, -16.000015)
@@ -347,12 +542,11 @@ rotation = -0.78539807
 scale = Vector2(1.1428577, 1.4761919)
 shape = SubResource("CapsuleShape2D_6sj1v")
 
-[node name="roller zone" type="Area2D" parent="roller" unique_id=1747976550 node_paths=PackedStringArray("target", "sprite_to_change")]
+[node name="roller zone" type="Area2D" parent="roller" unique_id=1747976550 node_paths=PackedStringArray("sprite_to_change")]
 position = Vector2(4.7683716e-07, 4.7683716e-07)
 collision_mask = 4
 script = ExtResource("11_dg77c")
-target = NodePath("../../dough")
-sprite_to_change = NodePath("../../dough/PngtreeRawPizzaDoughRoundCircleTopViewPngImage16531787")
+sprite_to_change = NodePath("../../dough/dough_sprite")
 new_texture = ExtResource("12_ycdy4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="roller/roller zone" unique_id=19137568]
@@ -361,85 +555,10 @@ rotation = -0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_6sj1v")
 
-[node name="label" type="Node2D" parent="." unique_id=1160221889]
-position = Vector2(1280, -425)
-rotation = -0.005501838
-scale = Vector2(3.1617985, 3.1617985)
-skew = 0.0110036135
-
-[node name="Label" type="Label" parent="label" unique_id=566520390]
-offset_left = -217.32738
-offset_top = 49.72544
-offset_right = 68.21608
-offset_bottom = 247.45285
-scale = Vector2(0.93228966, 0.93228966)
-theme_override_fonts/font = ExtResource("17_yaehf")
-theme_override_font_sizes/font_size = 24
-text = "Press Button to start your first order"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Label2" type="Label" parent="label" unique_id=534644152]
-offset_left = -786.99744
-offset_top = -16.664913
-offset_right = -501.45398
-offset_bottom = 181.0625
-scale = Vector2(0.93228966, 0.93228966)
-theme_override_fonts/font = ExtResource("17_yaehf")
-theme_override_font_sizes/font_size = 24
-text = "push on the handel bars and roll over the dough"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Label3" type="Label" parent="label" unique_id=732848461]
-offset_left = -334.96118
-offset_top = -176.11345
-offset_right = -49.417725
-offset_bottom = 21.613968
-scale = Vector2(0.93228966, 0.93228966)
-theme_override_fonts/font = ExtResource("17_yaehf")
-theme_override_font_sizes/font_size = 24
-text = "add sauce"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Label4" type="Label" parent="label" unique_id=208100379]
-offset_left = -1484.7706
-offset_top = -372.2079
-offset_right = -1199.2272
-offset_bottom = 327.7921
-scale = Vector2(0.93228966, 0.93228966)
-theme_override_fonts/font = ExtResource("17_yaehf")
-theme_override_font_sizes/font_size = 16
-text = "Everything I'd love you to work on while I'm sleeping
-
-Please be careful not to break anything — and if something does go wrong, no worries, just leave a quick note explaining what happened so I can catch up in the morning.
-Could you make it so that when I spill tomato sauce on the flattened pizza dough, the sprite changes to a pizza with sauce on it?
-Feel free to add more ingredients too — you can follow the same approach I used for the tomato sauce, or do it however you think works best.
-
-talk with des on adding some new sprites instead of these pictures
-
-That's all I need for now. If you finish everything and want to keep going, go for it — thanks so much!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="ImageRemovebgPreview(4)" type="Sprite2D" parent="." unique_id=1241240558]
-position = Vector2(179, -288.00003)
-scale = Vector2(0.6743245, 0.6743245)
-texture = ExtResource("18_074og")
-
-[node name="ImageRemovebgPreview(4)2" type="Sprite2D" parent="." unique_id=1545412564]
-position = Vector2(-30, -288.00003)
-scale = Vector2(0.6743245, 0.6743245)
-texture = ExtResource("18_074og")
-
-[node name="ImageRemovebgPreview(4)3" type="Sprite2D" parent="." unique_id=2101867197]
-position = Vector2(-248, -280)
-scale = Vector2(0.6743245, 0.6743245)
-texture = ExtResource("18_074og")
-
 [connection signal="body_entered" from="button" to="button" method="_on_body_entered"]
 [connection signal="body_entered" from="cutting board" to="cutting board" method="_on_body_entered"]
+[connection signal="body_entered" from="jar2/Detector" to="jar2/Detector" method="_on_body_entered"]
+[connection signal="body_entered" from="jar/Detector" to="jar/Detector" method="_on_body_entered"]
 [connection signal="body_entered" from="roller" to="button" method="_on_roller_body_entered"]
 [connection signal="body_entered" from="roller/roller zone" to="button" method="_on_roller_zone_body_entered"]
 [connection signal="body_entered" from="roller/roller zone" to="roller/roller zone" method="_on_body_entered"]
