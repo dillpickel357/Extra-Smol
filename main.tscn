@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dkvrhkebghkyh" path="res://assets/images-removebg-preview (1).png" id="12_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://b1kjupjh4qtwb" path="res://assets/empty-open-glass-jar-isolated-260nw-2215068087-removebg-preview.png" id="13_w48qg"]
 [ext_resource type="Texture2D" uid="uid://b34m6tnp5jive" path="res://assets/image-removebg-preview (1).png" id="14_vivmo"]
+[ext_resource type="FontFile" uid="uid://5pg32oy2d56r" path="res://brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="17_yaehf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ai6g8"]
 radius = 229.83008
@@ -358,6 +359,19 @@ position = Vector2(0.03703642, 0.018531322)
 rotation = -0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_6sj1v")
+
+[node name="Label" type="Label" parent="roller" unique_id=566520390]
+offset_left = 291.18387
+offset_top = 165.81476
+offset_right = 566.8519
+offset_bottom = 363.54208
+rotation = 0.7853982
+scale = Vector2(1.8809776, 1.8809776)
+theme_override_fonts/font = ExtResource("17_yaehf")
+theme_override_font_sizes/font_size = 16
+text = "Press Button to start your first order"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [connection signal="body_entered" from="button" to="button" method="_on_body_entered"]
 [connection signal="body_entered" from="cutting board" to="cutting board" method="_on_body_entered"]

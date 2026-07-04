@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://t7mgn7ovv5p6"]
+
+[ext_resource type="Script" path="res://scenes/dough.gd" id="1_vlk7j"]
+[ext_resource type="Texture2D" uid="uid://tvj6jinavcgm" path="res://assets/image-removebg-preview.png" id="2_jonm2"]
+[ext_resource type="Texture2D" uid="uid://bvgqdoop6rarv" path="res://assets/pngtree-raw-pizza-dough-round-circle-top-view-png-image_16531787.png" id="3_1r44m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6sj1v"]
+radius = 144.78903
+
+[node name="DoughParent" type="Node2D" unique_id=972178948]
+script = ExtResource("1_vlk7j")
+
+[node name="tray" type="Sprite2D" parent="." unique_id=1879811302]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_jonm2")
+
+[node name="dough" type="RigidBody2D" parent="." unique_id=1267660686 groups=["dough"]]
+scale = Vector2(0.98083395, 0.9845953)
+collision_layer = 4
+mass = 3.0
+gravity_scale = 0.0
+linear_damp = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="dough" unique_id=1344492769]
+texture = ExtResource("3_1r44m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dough" unique_id=672947745]
+shape = SubResource("CircleShape2D_6sj1v")
