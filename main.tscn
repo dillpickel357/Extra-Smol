@@ -16,13 +16,16 @@
 [ext_resource type="Script" uid="uid://b16ui8gjhavyy" path="res://roller_zone.gd" id="11_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dydg3eygrvaes" path="res://tomato-sauce.png" id="12_82xsv"]
 [ext_resource type="Script" uid="uid://ctkhdwl3m5utp" path="res://detector.gd" id="12_cegan"]
-[ext_resource type="Texture2D" uid="uid://b77jwlmhvordy" path="res://unflatted-dough1.png" id="12_d13ii"]
-[ext_resource type="Texture2D" uid="uid://dkvrhkebghkyh" path="res://assets/images-removebg-preview (1).png" id="12_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://dgw0ucbjmwqmi" path="res://tomato-sauce-overlay.png" id="13_lswn8"]
 [ext_resource type="Texture2D" uid="uid://ctheskupkyjsq" path="res://cup-of-grated-gruyère-cheese.webp" id="13_ryguw"]
 [ext_resource type="Script" uid="uid://b4rpv4uxaynil" path="res://detector2.gd" id="14_82xsv"]
-[ext_resource type="Texture2D" uid="uid://b34m6tnp5jive" path="res://assets/image-removebg-preview (1).png" id="14_vivmo"]
-[ext_resource type="Texture2D" uid="uid://dn1qf281jkwgd" path="res://Garlic-cheese-pizza_9.webp" id="15_getpj"]
+[ext_resource type="Texture2D" uid="uid://cwfhml44nqvk5" path="res://cheese.png" id="14_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://m6wu2gmbmka6" path="res://pepperoni.png" id="15_xuqvo"]
 [ext_resource type="FontFile" uid="uid://5pg32oy2d56r" path="res://brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="17_yaehf"]
+[ext_resource type="Texture2D" uid="uid://cyschfvqhqm8y" path="res://flatted-dough.png" id="24_0odxb"]
+[ext_resource type="PackedScene" uid="uid://t7mgn7ovv5p6" path="res://dough_parent.tscn" id="24_1u8w0"]
+[ext_resource type="Script" uid="uid://boi520yggcldk" path="res://detector3.gd" id="25_0odxb"]
+[ext_resource type="Script" uid="uid://dv6wasej31cvg" path="res://detector4.gd" id="26_lswn8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ai6g8"]
 radius = 229.83008
@@ -385,7 +388,7 @@ mesh = SubResource("QuadMesh_6sj1v")
 texture = ExtResource("1_h2yge")
 
 [node name="tray" type="Sprite2D" parent="assets" unique_id=638552460]
-position = Vector2(-1017.0013, 847.5011)
+position = Vector2(-1016.80676, 1995.4132)
 scale = Vector2(1.6440684, 1.6440684)
 texture = ExtResource("2_1bvp3")
 
@@ -404,14 +407,14 @@ gravity_scale = 0.0
 linear_damp = 2.0
 script = ExtResource("9_82xsv")
 
-[node name="dough_sprite" type="Sprite2D" parent="dough2" unique_id=2455291]
+[node name="Sprite2D" type="Sprite2D" parent="dough2" unique_id=2455291]
 texture = ExtResource("4_7mycd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dough2" unique_id=229029487]
 shape = SubResource("CircleShape2D_6sj1v")
 
 [node name="dough" type="RigidBody2D" parent="." unique_id=808717321 groups=["dough"]]
-position = Vector2(2, 837.99994)
+position = Vector2(2.135437, 1637.1354)
 scale = Vector2(0.98083395, 0.9845953)
 collision_layer = 4
 collision_mask = 16
@@ -420,14 +423,44 @@ gravity_scale = 0.0
 linear_damp = 2.0
 script = ExtResource("9_82xsv")
 
-[node name="dough_sprite" type="Sprite2D" parent="dough" unique_id=2037625340]
+[node name="Sprite2D" type="Sprite2D" parent="dough" unique_id=2037625340]
+texture_filter = 1
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("12_d13ii")
+texture = ExtResource("24_0odxb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dough" unique_id=289550893]
 position = Vector2(-10.195406, -6.093813)
 rotation = 1.3089969
 shape = SubResource("CapsuleShape2D_2q4s4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="dough" unique_id=923826000]
+texture_filter = 1
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("13_lswn8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="dough" unique_id=1582805013]
+texture_filter = 1
+scale = Vector2(1.17, 1.17)
+texture = ExtResource("14_a6jrf")
+
+[node name="Sprite2D4" type="Sprite2D" parent="dough" unique_id=1617356615]
+texture_filter = 1
+scale = Vector2(1.17, 1.17)
+texture = ExtResource("15_xuqvo")
+
+[node name="pizza spawner" type="Node2D" parent="." unique_id=2114658810 node_paths=PackedStringArray("spawn_point", "stop_point")]
+script = ExtResource("3_1bvp3")
+scene_to_spawn = ExtResource("24_1u8w0")
+spawn_point = NodePath("spawn")
+stop_point = NodePath("stop")
+speed = 500.0
+release_delay = 0.1
+
+[node name="spawn" type="Marker2D" parent="pizza spawner" unique_id=251018792]
+position = Vector2(4721, 838)
+
+[node name="stop" type="Marker2D" parent="pizza spawner" unique_id=1863419618]
+position = Vector2(0, 838)
 
 [node name="player controller" parent="." unique_id=402805899 instance=ExtResource("1_ig7tw")]
 position = Vector2(0, 229)
@@ -460,7 +493,6 @@ texture = ExtResource("13_ryguw")
 collision_layer = 16
 collision_mask = 255
 script = ExtResource("14_82xsv")
-new_texture = ExtResource("15_getpj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="jar2/Detector" unique_id=1488170856]
 position = Vector2(1.0195407, -4.062583)
@@ -490,7 +522,6 @@ texture = ExtResource("12_82xsv")
 collision_layer = 16
 collision_mask = 255
 script = ExtResource("12_cegan")
-new_texture = ExtResource("14_vivmo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="jar/Detector" unique_id=1205795344]
 position = Vector2(1.0195407, -4.062583)
@@ -500,21 +531,6 @@ shape = SubResource("CircleShape2D_cegan")
 position = Vector2(1.1920929e-06, 37.57889)
 scale = Vector2(1.0000002, 1)
 shape = SubResource("CircleShape2D_8tn5n")
-
-[node name="pizza spawner" type="Node2D" parent="." unique_id=2114658810 node_paths=PackedStringArray("tray", "dough", "spawn_point", "stop_point")]
-script = ExtResource("3_1bvp3")
-tray = NodePath("../assets/tray")
-dough = NodePath("../dough")
-spawn_point = NodePath("spawn")
-stop_point = NodePath("stop")
-speed = 900
-release_delay = 0.1
-
-[node name="spawn" type="Marker2D" parent="pizza spawner" unique_id=251018792]
-position = Vector2(4721, 838)
-
-[node name="stop" type="Marker2D" parent="pizza spawner" unique_id=1863419618]
-position = Vector2(0, 838)
 
 [node name="roller" type="RigidBody2D" parent="." unique_id=1288896649]
 position = Vector2(-9.536743e-07, -16.000015)
@@ -542,18 +558,80 @@ rotation = -0.78539807
 scale = Vector2(1.1428577, 1.4761919)
 shape = SubResource("CapsuleShape2D_6sj1v")
 
-[node name="roller zone" type="Area2D" parent="roller" unique_id=1747976550 node_paths=PackedStringArray("sprite_to_change")]
+[node name="roller zone" type="Area2D" parent="roller" unique_id=1747976550]
 position = Vector2(4.7683716e-07, 4.7683716e-07)
 collision_mask = 4
 script = ExtResource("11_dg77c")
-sprite_to_change = NodePath("../../dough/dough_sprite")
-new_texture = ExtResource("12_ycdy4")
+new_texture = ExtResource("24_0odxb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="roller/roller zone" unique_id=19137568]
 position = Vector2(0.03703642, 0.018531322)
 rotation = -0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_6sj1v")
+
+[node name="DoughParent" parent="." unique_id=972178948 instance=ExtResource("24_1u8w0")]
+position = Vector2(721, 1598)
+
+[node name="jar3" type="RigidBody2D" parent="." unique_id=1905052882]
+position = Vector2(-72, -280)
+scale = Vector2(0.96203536, 0.9694279)
+collision_layer = 16
+collision_mask = 15
+mass = 3.0
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp = 2.0
+
+[node name="Sprite" type="Sprite2D" parent="jar3" unique_id=797131317]
+texture_filter = 1
+position = Vector2(3.1721887e-05, 34.040695)
+scale = Vector2(0.515, 0.515)
+texture = ExtResource("13_ryguw")
+
+[node name="Detector" type="Area2D" parent="jar3" unique_id=969197575]
+collision_layer = 16
+collision_mask = 255
+script = ExtResource("25_0odxb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jar3/Detector" unique_id=217015083]
+position = Vector2(1.0195407, -4.062583)
+shape = SubResource("CircleShape2D_cegan")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jar3" unique_id=1060516718]
+position = Vector2(1.1920929e-06, 37.57889)
+scale = Vector2(1.0000002, 1)
+shape = SubResource("CircleShape2D_8tn5n")
+
+[node name="jar4" type="RigidBody2D" parent="." unique_id=476488797]
+position = Vector2(-336, -280)
+scale = Vector2(0.96203536, 0.9694279)
+collision_layer = 16
+collision_mask = 15
+mass = 3.0
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp = 2.0
+
+[node name="Sprite" type="Sprite2D" parent="jar4" unique_id=1017172216]
+texture_filter = 1
+position = Vector2(3.1721887e-05, 34.040695)
+scale = Vector2(0.515, 0.515)
+texture = ExtResource("13_ryguw")
+
+[node name="Detector" type="Area2D" parent="jar4" unique_id=1618639940]
+collision_layer = 16
+collision_mask = 255
+script = ExtResource("26_lswn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jar4/Detector" unique_id=310872975]
+position = Vector2(1.0195407, -4.062583)
+shape = SubResource("CircleShape2D_cegan")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jar4" unique_id=553217091]
+position = Vector2(1.1920929e-06, 37.57889)
+scale = Vector2(1.0000002, 1)
+shape = SubResource("CircleShape2D_8tn5n")
 
 [connection signal="body_entered" from="button" to="button" method="_on_body_entered"]
 [connection signal="body_entered" from="cutting board" to="cutting board" method="_on_body_entered"]
@@ -562,3 +640,5 @@ shape = SubResource("RectangleShape2D_6sj1v")
 [connection signal="body_entered" from="roller" to="button" method="_on_roller_body_entered"]
 [connection signal="body_entered" from="roller/roller zone" to="button" method="_on_roller_zone_body_entered"]
 [connection signal="body_entered" from="roller/roller zone" to="roller/roller zone" method="_on_body_entered"]
+[connection signal="body_entered" from="jar3/Detector" to="jar3/Detector" method="_on_body_entered"]
+[connection signal="body_entered" from="jar4/Detector" to="jar4/Detector" method="_on_body_entered"]

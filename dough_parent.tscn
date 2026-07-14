@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://t7mgn7ovv5p6"]
 
 [ext_resource type="Texture2D" uid="uid://tvj6jinavcgm" path="res://assets/image-removebg-preview.png" id="2_jonm2"]
-[ext_resource type="Texture2D" uid="uid://bvgqdoop6rarv" path="res://assets/pngtree-raw-pizza-dough-round-circle-top-view-png-image_16531787.png" id="3_1r44m"]
+[ext_resource type="Script" uid="uid://cr12gcxr3mv7e" path="res://dough.gd" id="2_vlk7j"]
+[ext_resource type="Texture2D" uid="uid://b77jwlmhvordy" path="res://unflatted-dough1.png" id="3_vlk7j"]
+[ext_resource type="Texture2D" uid="uid://dgw0ucbjmwqmi" path="res://tomato-sauce-overlay.png" id="4_jonm2"]
+[ext_resource type="Texture2D" uid="uid://cwfhml44nqvk5" path="res://cheese.png" id="5_h2ioq"]
+[ext_resource type="Texture2D" uid="uid://m6wu2gmbmka6" path="res://pepperoni.png" id="6_3xj8c"]
+[ext_resource type="Texture2D" uid="uid://lwfyecnjcch" path="res://mushrooms.png" id="7_3xj8c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6sj1v"]
-radius = 144.78903
+radius = 165.1937
 
 [node name="DoughParent" type="Node2D" unique_id=972178948]
 
@@ -18,9 +23,35 @@ collision_layer = 4
 mass = 3.0
 gravity_scale = 0.0
 linear_damp = 2.0
+script = ExtResource("2_vlk7j")
 
 [node name="Sprite2D" type="Sprite2D" parent="dough" unique_id=1344492769]
-texture = ExtResource("3_1r44m")
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_vlk7j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dough" unique_id=672947745]
 shape = SubResource("CircleShape2D_6sj1v")
+
+[node name="TomatoOverlay" type="Sprite2D" parent="dough" unique_id=2090626924]
+visible = false
+texture_filter = 1
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("4_jonm2")
+
+[node name="CheeseOverlay" type="Sprite2D" parent="dough" unique_id=411814444]
+visible = false
+texture_filter = 1
+scale = Vector2(1.17, 1.17)
+texture = ExtResource("5_h2ioq")
+
+[node name="PepperoniOverlay" type="Sprite2D" parent="dough" unique_id=2039558561]
+visible = false
+texture_filter = 1
+scale = Vector2(1.17, 1.17)
+texture = ExtResource("6_3xj8c")
+
+[node name="MushroomOverlay" type="Sprite2D" parent="dough" unique_id=917703293]
+visible = false
+texture_filter = 1
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_3xj8c")

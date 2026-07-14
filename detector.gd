@@ -1,6 +1,5 @@
 extends Area2D
 
-@export var new_texture: Texture2D
 
 func _on_body_entered(body: Node2D) -> void:
 	print(body.name)
@@ -10,7 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 		if body.IsFlattend and not body.HasTomato:
 			body.HasTomato = true
 			
-			if body.has_node("dough_sprite"):
-				var target_sprite = body.get_node("dough_sprite") as Sprite2D
-				if target_sprite and new_texture:
-					target_sprite.texture = new_texture
+			if body.has_node("TomatoOverlay"):
+				var target_sprite = body.get_node("TomatoOverlay") as Sprite2D
+				if target_sprite:
+					target_sprite.visible = true
